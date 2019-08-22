@@ -19,8 +19,6 @@ export class ChatDialogComponent implements OnInit {
 
   ngOnInit() {
   	 this.chat.converse('Human presence detected 🤖. How can I help you? ');
-   //this.chat.converse('Human presence detected 🤖. How can I help you? ');
-	//this.addBotMessage('Human presence detected 🤖. How can I help you? ');
   	// appends to array after each new message is added to feedSource
     this.messages = this.chat.conversation.asObservable()
      // .scan((acc, val) => acc.concat(val) );

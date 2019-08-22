@@ -8,7 +8,8 @@ import { ChatService } from './chat.service';
 @NgModule({
   declarations: [ChatDialogComponent],
   imports: [
-    CommonModule, FormsModule
+    CommonModule, 
+    FormsModule
   ],
   exports: [ ChatDialogComponent ], // <-- export here
   providers: [ChatService]
