@@ -1,10 +1,16 @@
-// Imports the Google Cloud client library.
+
+
+
+  // Imports the Google Cloud client library.
 const {Storage} = require('@google-cloud/storage');
 
-// Instantiates a client. If you don't specify credentials when constructing
-// the client, the client library will look for credentials in the
-// environment.
-const storage = new Storage();
+// Instantiates a client. Explicitly use service account credentials by
+// specifying the private key file. All clients in google-cloud-node have this
+// helper, see https://github.com/GoogleCloudPlaatform/google-cloud-node/blob/master/docs/authentication.md
+ const projectId = 'nathan-qwqaix'
+ const keyFilename = 'keyfile.json'
+
+const storage = new Storage({projectId, keyFilename});
 
 // Makes an authenticated API request.
 storage
@@ -20,7 +26,3 @@ storage
   .catch((err) => {
     console.error('ERROR:', err);
   });
-
-
-
-  
